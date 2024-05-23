@@ -16,20 +16,6 @@ RUN apt-get update \
 
 
 
-USER gitpod
-  
-RUN mkdir -p /home/gitpod/logs                                                                            \ 
-    && touch /home/gitpod/logs/myDockerlog.txt                                                            \
-    && echo "Installation start, made some folders in /home/gitpod" >> /home/gitpod/logs/myDockerlog.txt  \
-    && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  
-   
-
-# Give back control
-USER root
-
-
-# Cleaning
-RUN apt-get clean  && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 
 
@@ -91,27 +77,43 @@ COPY install_stm32cubeclt.exp /install_stm32cubeclt.exp
 RUN chmod +x /install_stm32cubeclt.sh /install_stm32cubeclt.exp && \
     /install_stm32cubeclt.exp
 
-# Create a non-root user and set permissions
-ENV USER_NAME=mcu
-ENV PROJECT_DIR=/project
 
-ARG host_uid=1000
-ARG host_gid=1000
-RUN groupadd -g $host_gid $USER_NAME && \
-    useradd -g $host_gid -m -s /bin/bash -u $host_uid $USER_NAME && \
-    mkdir -p $PROJECT_DIR && chown -R $USER_NAME:$USER_NAME $PROJECT_DIR
+
+# Create a non-root user and set permissions
+#ENV USER_NAME=mcu
+#ENV PROJECT_DIR=/project
+
+#ARG host_uid=1000
+#ARG host_gid=1000
+#RUN groupadd -g $host_gid $USER_NAME && \
+#    useradd -g $host_gid -m -s /bin/bash -u $host_uid $USER_NAME && \
+#    mkdir -p $PROJECT_DIR && chown -R $USER_NAME:$USER_NAME $PROJECT_DIR
 
 # Switch to the non-root user
-USER $USER_NAME
+#USER $USER_NAME
 
 # Set the working directory
-WORKDIR $PROJECT_DIR
+#WORKDIR $PROJECT_DIR
 
 
 
 
 
 
+USER gitpod
+  
+RUN mkdir -p /home/gitpod/logs                                                                            \ 
+    && touch /home/gitpod/logs/myDockerlog.txt                                                            \
+    && echo "Installation start, made some folders in /home/gitpod" >> /home/gitpod/logs/myDockerlog.txt  \
+    && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  
+   
+
+# Give back control
+USER root
+
+
+# Cleaning
+RUN apt-get clean  && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 
 
