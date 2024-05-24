@@ -1,8 +1,5 @@
-  
 image:
-  file: registry.hub.docker.com/charlesdias/stm32_dev_env
-
-  
+  file: .gitpod.Dockerfile
 
 ports:
 - port: 8080
