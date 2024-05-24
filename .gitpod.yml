@@ -1,6 +1,8 @@
   
 image:
-  file: hub.docker.com/r/charlesdias/stm32_dev_env
+  file: registry.hub.docker.com/charlesdias/stm32_dev_env
+
+  
 
 ports:
 - port: 8080
