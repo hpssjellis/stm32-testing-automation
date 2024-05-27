@@ -4,7 +4,8 @@ image:
 ports:
 - port: 8080
 
-
+tasks:                                                                                               &&
+  - command: STM32_Programmer_CLI -h      
 
 
 ## https://hub.docker.com/r/charlesdias/stm32_dev_env
