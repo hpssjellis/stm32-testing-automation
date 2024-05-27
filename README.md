@@ -69,12 +69,23 @@ STM32_Programmer_CLI -c port=/dev/virtualcom0
 
 ```
 
+## Possibly use arduino Create agent that I have as a gitpod here
+
+https://github.com/hpssjellis/arduino-create-agent-js-client-for-gitpod/tree/master
+
+
+# Original Page by Charles Dias following
+
+https://github.com/CharlesDias/stm32-testing-automation
+
 
 
 
 [![Language](https://img.shields.io/badge/Made%20with-C-blue.svg)](https://shields.io/)
 [![Language](https://img.shields.io/badge/Made%20with-C++-blue.svg)](https://shields.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
 
 
 ## LinkedIn Articles
