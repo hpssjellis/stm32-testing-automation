@@ -7,7 +7,7 @@ Run as a gitpod https://gitpod.io/#github.com/hpssjellis/stm32-testing-automatio
 ## Commands to try
 
 
-SHould load the help file
+This command  should load the help file
 
 ```
 STM32_Programmer_CLI -h
