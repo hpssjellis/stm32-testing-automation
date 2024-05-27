@@ -6,6 +6,13 @@ Run as a gitpod https://gitpod.io/#github.com/hpssjellis/stm32-testing-automatio
 
 ## Commands to try
 
+
+SHould load the help file
+
+```
+STM32_Programmer_CLI -h
+```
+
 Here are some other common options you might use with STM32_Programmer_CLI:
 
 -c: Connect to a device.  
